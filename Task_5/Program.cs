@@ -26,12 +26,12 @@ int[] MassNums(int size)
 
 void SumNumbers(int[] arr)
 {
-    int sum = 0;
+    int mul = 0;
     int len = arr.Length - 1;
     for (int i = 0; i < arr.Length / 2; i++)
     {
-        sum = arr[i] + arr[len - i];
-        Console.Write($"{sum} ");
+        mul = arr[i] * arr[len - i];
+        Console.Write($"{mul} ");
     }
     if (arr.Length % 2 == 0) Console.WriteLine();
     else Console.WriteLine(arr[arr.Length / 2]);
