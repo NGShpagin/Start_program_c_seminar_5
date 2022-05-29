@@ -3,7 +3,7 @@
 // Задайте массив вещественных чисел.
 // Найдите разницу между максимальным и минимальным элементоми массива.
 
-void Print(int[] arr)
+void Print(double[] arr)
 {
     int size = arr.Length;
     for (int i = 0; i < size; i++)
@@ -15,22 +15,23 @@ void Print(int[] arr)
 
 int[] MassNums(int size)
 {
-    int[] arr = new int[size];
+    double[] arr = new double[size];
+    Random n_new = new Random();
 
     for (int i = 0; i < size; i++)
     {
-        arr[i] = new Random().Next(1, 10);
+        arr[i] = Math.Round(n_new.NextDouble() * (10 + 12) - 10, 2);
     }
     return arr;
 }
 
-void MaxMin(int[] arr)
+void MaxMin(double[] arr)
 {
-    int max = 0;
-    int min = 1;
+    double max = arr[0];
+    double min = arr[0];
     for (int i = 0; i < arr.Length; i++)
     {
-        if (arr[i]>arr[max])
+        if (arr[i] > arr[max])
         {
             arr[max] = arr[i];
         }
